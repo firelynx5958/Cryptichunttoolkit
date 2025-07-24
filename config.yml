@@ -1,0 +1,23 @@
+# Cryptic Hunt Toolkit - Configuration
+
+site_name: Cryptic Hunt Toolkit
+site_description: >
+  A modern, professional, and fully in-browser toolkit for cryptic hunt and puzzle enthusiasts. Includes ciphers, steganography, text tools, and more.
+author: Firelynx
+
+# For GitHub Pages
+# (Uncomment if using Jekyll or similar static site generator)
+# theme: jekyll-theme-cayman
+# exclude:
+#   - node_modules
+#   - .gitignore
+#   - README.md
+
+# For Netlify
+# (Netlify will auto-detect static site, but you can specify settings)
+publish: /
+# build: npm run build
+# ignore: README.md
+
+# Custom settings (add as needed)
+entrypoint: index.html 
