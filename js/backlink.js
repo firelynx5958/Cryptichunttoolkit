@@ -15,6 +15,10 @@
     function isUrl(str) {
         return /^https?:\/\//i.test(str);
     }
+    function isPastebinCode(code) {
+        // Pastebin codes are usually 8+ alphanumeric chars, sometimes longer
+        return /^[a-zA-Z0-9]{8,}$/.test(code);
+    }
     async function unshortenApi(url) {
         try {
             const resp = await fetch(`https://unshorten.me/json/${encodeURIComponent(url)}`);
@@ -53,12 +57,22 @@
             return expanded ? {service, url, expanded} : null;
         });
         const results = (await Promise.all(tries)).filter(Boolean);
+        if (isPastebinCode(input)) {
+            results.push({
+                service: 'pastebin',
+                url: `https://pastebin.com/${input}`
+            });
+        }
         if (results.length === 0) {
             output.innerHTML = '<span style="color:#ffb0b0">No supported service found for this code. Try checking the code or pasting the full short URL.</span>';
         } else if (results.length === 1) {
             output.innerHTML = makeLink(results[0].service, results[0].expanded);
         } else {
-            output.innerHTML = '<b>Multiple possible matches found:</b>' + results.map(r => makeLink(r.service, r.expanded)).join('');
+            let html = '<b>Multiple possible matches found:</b><br>';
+            results.forEach(r => {
+                html += `${r.service}: <a href="${r.url}" target="_blank">${r.url}</a><br>`;
+            });
+            output.innerHTML = html;
         }
     };
 })(); 
