@@ -1,0 +1,22 @@
+<h2>Affine Cipher</h2>
+<p>Encrypt or decrypt text using the Affine cipher. Set keys <i>a</i> and <i>b</i> (for A, B in <code>Ax + B mod 26</code>). <i>a</i> must be coprime with 26 (typically odd and not 13).</p>
+<label>
+  <span>Input:</span><br>
+  <textarea id="affine-input" rows="3" style="width:100%"></textarea>
+</label>
+<br>
+<label>
+  <span>A (multiplier):</span>
+  <input id="affine-a" type="number" value="5" style="width:42px;">
+  <span>B (shift):</span>
+  <input id="affine-b" type="number" value="8" style="width:42px;">
+</label>
+<br>
+<button id="affine-encode">Encode</button>
+<button id="affine-decode">Decode</button>
+<br><br>
+<label>
+  <span>Output:</span><br>
+  <textarea id="affine-output" rows="3" style="width:100%" readonly></textarea>
+</label>
+<script src="js/affine.js"></script>

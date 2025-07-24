@@ -1,0 +1,20 @@
+<h2>Image Steganography</h2>
+<p>Hide or extract text in images (client-side, uses steg.js).</p>
+<label>
+    <span>Upload Image:</span><br>
+    <input id="steg-image-input" type="file" accept="image/*">
+</label>
+<br>
+<label>
+    <span>Message:</span><br>
+    <textarea id="steg-image-message" rows="2" style="width:100%"></textarea>
+</label>
+<br>
+<button id="steg-image-encode">Encode</button>
+<button id="steg-image-decode">Decode</button>
+<br><br>
+<label>
+    <span>Output:</span><br>
+    <div id="steg-image-output" style="width:100%; min-height:2em; background:#181a1b; color:#b0ffb0; border:1px solid #e0e0e0; border-radius:0.4em; padding:0.7em 0.8em; font-family:inherit; font-size:1em;"></div>
+</label>
+<script src="https://cdn.jsdelivr.net/npm/steg.js@1.0.6/steg.min.js"></script> 

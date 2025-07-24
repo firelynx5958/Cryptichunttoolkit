@@ -1,0 +1,20 @@
+<h2>Caesar Cipher</h2>
+<p>Shift each letter by a set amount. Encrypt or decrypt!</p>
+<label>
+    <span>Input Text:</span><br>
+    <textarea id="caesar-input" rows="3" style="width:100%"></textarea>
+</label>
+<br>
+<label>
+    <span>Shift:</span>
+    <input id="caesar-shift" type="number" value="3" min="-25" max="25" style="width:60px">
+</label>
+<br>
+<button id="caesar-encode">Encode</button>
+<button id="caesar-decode">Decode</button>
+<br><br>
+<label>
+    <span>Output:</span><br>
+    <textarea id="caesar-output" rows="3" style="width:100%" readonly></textarea>
+</label>
+<script src="js/caesar.js"></script>

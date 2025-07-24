@@ -1,0 +1,14 @@
+<h2>EXIF Data Viewer</h2>
+<p>View image EXIF metadata (client-side, uses exif-js).</p>
+<label>
+    <span>Upload Image:</span><br>
+    <input id="exif-input" type="file" accept="image/*">
+</label>
+<br>
+<button id="exif-btn">View EXIF</button>
+<br><br>
+<label>
+    <span>EXIF Data:</span><br>
+    <div id="exif-output" style="width:100%; min-height:2em; background:#181a1b; color:#b0ffb0; border:1px solid #e0e0e0; border-radius:0.4em; padding:0.7em 0.8em; font-family:inherit; font-size:1em;"></div>
+</label>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script> 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptic Hunt Toolkit</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-navbar">
+        <a href="index.html" class="navbar-title navbar-center">Cryptic Hunt Toolkit</a>
+    </nav>
+    <main>
+        <div class="tab-bar">
+            <button class="tab active" data-category="ciphers">Ciphers</button>
+            <button class="tab" data-category="text">Text</button>
+            <button class="tab" data-category="steg">Steganography</button>
+            <button class="tab" data-category="utils">Utilities</button>
+        </div>
+        <div class="tool-grid">
+            <div class="bright-card" data-tool="caesar" data-category="ciphers" style="background:#0A84FF;">
+                <div class="card-icon"><span class="material-icons-outlined">sync_alt</span></div>
+                <div class="bright-card-title">Caesar Cipher</div>
+                <div class="bright-card-desc">Shift letters by N (encode/decode)</div>
+            </div>
+            <div class="bright-card" data-tool="vigenere" data-category="ciphers" style="background:#32D74B;">
+                <div class="card-icon"><span class="material-icons-outlined">vpn_key</span></div>
+                <div class="bright-card-title">Vigenère Cipher</div>
+                <div class="bright-card-desc">Keyword-based letter shifting</div>
+            </div>
+            <div class="bright-card" data-tool="rot13" data-category="ciphers" style="background:#FF9F0A;">
+                <div class="card-icon"><span class="material-icons-outlined">autorenew</span></div>
+                <div class="bright-card-title">ROT13</div>
+                <div class="bright-card-desc">Simple letter rotation (13)</div>
+            </div>
+            <div class="bright-card" data-tool="base64" data-category="ciphers" style="background:#64D2FF;">
+                <div class="card-icon"><span class="material-icons-outlined">code</span></div>
+                <div class="bright-card-title">Base64 Encoder/Decoder</div>
+                <div class="bright-card-desc">Text ↔ Base64</div>
+            </div>
+            <div class="bright-card" data-tool="binary" data-category="ciphers" style="background:#BF5AF2;">
+                <div class="card-icon"><span class="material-icons-outlined">memory</span></div>
+                <div class="bright-card-title">Binary ↔ ASCII</div>
+                <div class="bright-card-desc">Text ↔ Binary</div>
+            </div>
+            <div class="bright-card" data-tool="morse" data-category="ciphers" style="background:#FFD60A; color:#18181A;">
+                <div class="card-icon"><span class="material-icons-outlined">more_horiz</span></div>
+                <div class="bright-card-title">Morse Code</div>
+                <div class="bright-card-desc">Text ↔ Morse</div>
+            </div>
+            <div class="bright-card" data-tool="railfence" data-category="ciphers" style="background:#FF375F;">
+                <div class="card-icon"><span class="material-icons-outlined">stairs</span></div>
+                <div class="bright-card-title">Rail Fence Cipher</div>
+                <div class="bright-card-desc">Zigzag transposition cipher</div>
+            </div>
+            <div class="bright-card" data-tool="wordshift" data-category="ciphers" style="background:#5E5CE6;">
+                <div class="card-icon"><span class="material-icons-outlined">swap_horiz</span></div>
+                <div class="bright-card-title">Word/Letter Shift</div>
+                <div class="bright-card-desc">Custom Caesar-style shifts</div>
+            </div>
+            <div class="bright-card" data-tool="reverser" data-category="text" style="background:#30B0C7;">
+                <div class="card-icon"><span class="material-icons-outlined">flip</span></div>
+                <div class="bright-card-title">Text Reverser</div>
+                <div class="bright-card-desc">Reverse or flip text</div>
+            </div>
+            <div class="bright-card" data-tool="anagram" data-category="text" style="background:#30B0C7;">
+                <div class="card-icon"><span class="material-icons-outlined">shuffle</span></div>
+                <div class="bright-card-title">Anagram Solver</div>
+                <div class="bright-card-desc">Find word/phrase rearrangements</div>
+            </div>
+            <div class="bright-card" data-tool="regex" data-category="text" style="background:#FFD60A; color:#18181A;">
+                <div class="card-icon"><span class="material-icons-outlined">find_in_page</span></div>
+                <div class="bright-card-title">Regex Tester</div>
+                <div class="bright-card-desc">Test regular expressions</div>
+            </div>
+            <div class="bright-card" data-tool="unicode" data-category="text" style="background:#BF5AF2;">
+                <div class="card-icon"><span class="material-icons-outlined">language</span></div>
+                <div class="bright-card-title">Unicode Inspector</div>
+                <div class="bright-card-desc">Explore Unicode details</div>
+            </div>
+            <div class="bright-card" data-tool="braille" data-category="text" style="background:#32D74B;">
+                <div class="card-icon"><span class="material-icons-outlined">blur_on</span></div>
+                <div class="bright-card-title">Braille Converter</div>
+                <div class="bright-card-desc">Text ↔ Braille</div>
+            </div>
+            <div class="bright-card" data-tool="steg-image" data-category="steg" style="background:#64D2FF;">
+                <div class="card-icon"><span class="material-icons-outlined">image</span></div>
+                <div class="bright-card-title">Image Steganography</div>
+                <div class="bright-card-desc">Hide or extract text in images</div>
+            </div>
+            <div class="bright-card" data-tool="steg-audio" data-category="steg" style="background:#FF375F;">
+                <div class="card-icon"><span class="material-icons-outlined">graphic_eq</span></div>
+                <div class="bright-card-title">Audio Steganography</div>
+                <div class="bright-card-desc">Extract hidden messages from audio</div>
+            </div>
+            <div class="bright-card" data-tool="qr" data-category="steg" style="background:#0A84FF;">
+                <div class="card-icon"><span class="material-icons-outlined">qr_code</span></div>
+                <div class="bright-card-title">QR Code Tools</div>
+                <div class="bright-card-desc">Generate/Decode QR codes</div>
+            </div>
+            <div class="bright-card" data-tool="hashing" data-category="utils" style="background:#FFD60A; color:#18181A;">
+                <div class="card-icon"><span class="material-icons-outlined">tag</span></div>
+                <div class="bright-card-title">Hashing Tools</div>
+                <div class="bright-card-desc">MD5, SHA1, SHA256</div>
+            </div>
+            <div class="bright-card" data-tool="backlink" data-category="utils" style="background:#32D74B;">
+                <div class="card-icon"><span class="material-icons-outlined">link</span></div>
+                <div class="bright-card-title">Backlink Finder</div>
+                <div class="bright-card-desc">Unmask short URLs (Bitly, Tinyurl, etc.)</div>
+            </div>
+            <div class="bright-card" data-tool="exif" data-category="utils" style="background:#BF5AF2;">
+                <div class="card-icon"><span class="material-icons-outlined">info</span></div>
+                <div class="bright-card-title">EXIF Data Viewer</div>
+                <div class="bright-card-desc">View image metadata</div>
+            </div>
+        </div>
+        <div id="tool-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div id="tool-container"></div>
+            </div>
+        </div>
+    </main>
+    <div class="footer-firelynx">Made by Firelynx</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
