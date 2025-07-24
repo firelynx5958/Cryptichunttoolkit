@@ -57,16 +57,17 @@
             return expanded ? {service, url, expanded} : null;
         });
         const results = (await Promise.all(tries)).filter(Boolean);
-        if (isPastebinCode(input)) {
+        if (isPastebinCode(val)) {
             results.push({
                 service: 'pastebin',
-                url: `https://pastebin.com/${input}`
+                url: `https://pastebin.com/${val}`
             });
         }
         if (results.length === 0) {
             output.innerHTML = '<span style="color:#ffb0b0">No supported service found for this code. Try checking the code or pasting the full short URL.</span>';
         } else if (results.length === 1) {
-            output.innerHTML = makeLink(results[0].service, results[0].expanded);
+            const r = results[0];
+            output.innerHTML = makeLink(r.service, r.url || r.expanded);
         } else {
             let html = '<b>Multiple possible matches found:</b><br>';
             results.forEach(r => {
